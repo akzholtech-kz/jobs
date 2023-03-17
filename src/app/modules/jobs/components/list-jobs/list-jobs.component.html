@@ -1,0 +1,38 @@
+
+<div class="container">
+    <div class="row">
+        <p class="fs-2">Job description</p>
+    </div>
+    <div>
+        <button class="btn btn-outline-dark float-end" routerLink="new"> Create job</button>
+    </div>
+    <div
+    >
+          <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tile</th>
+                <th scope="col">Number</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Experience</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Close Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of jobs; let i = index">
+                <td><a class="nav-link">{{i+1}}</a></td>
+                <td><a class="nav-link" (click)="onDetail(job.id)">{{job?.job_title}}</a></td>
+                <td><a class="nav-link" (click)="onDetail(job.id)">{{job?.job_number}}</a></td>
+                <td><a class="nav-link" (click)="onDetail(job.id)">{{job?.job_notes}}</a></td>
+                <td><a class="nav-link" (click)="onDetail(job.id)">{{job?.experience_required}}</a></td>
+                <td><a class="nav-link" (click)="onDetail(job.id)">{{job?.job_start_date}}</a></td>
+                <td><a class="nav-link" (click)="onDetail(job.id)">{{job?.job_close_date}}</a></td>
+                <td><a class="text-danger" (click)="delete(job.id)"><i class="bi bi-trash3"></i></a></td>
+            </tr>
+        </tbody>
+    </table>  
+    </div>
+
+</div>
